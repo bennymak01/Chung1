@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>駿達文具店 - 太子專業文具打印服務</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* About Section */
+        .about-section {
+            background: white;
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .location-info {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .location-info h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .location-info p {
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        /* Services Section */
+        .services-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .services-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            color: #333;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        /* Features Section */
+        .features-section {
+            background: white;
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .features-section h2 {
+            text-align: center;
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Clients Section */
+        .clients-section {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .clients-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .clients-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .client-badge {
+            background: white;
+            color: #333;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background: white;
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .testimonials-section h2 {
+            text-align: center;
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            position: relative;
+        }
+
+        .testimonial-icon {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #667eea;
+            text-align: right;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            margin: 2rem 0;
+        }
+
+        .contact-section h2 {
+            text-align: center;
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .contact-form-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .contact-form-container h3 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .map-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .map-container h3 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Store Image Section */
+        .store-image-section {
+            background: white;
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .store-image-section h2 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .store-image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>📝 駿達文具店</h1>
+        <p>太子區專業文具及打印服務 ✨</p>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- About Section -->
+        <section class="about-section">
+            <h2 style="text-align: center; color: #667eea; font-size: 2rem; margin-bottom: 1rem;">🏪 關於駿達文具店</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 2rem;">
+                位於太子嘉福中心的專業文具店，提供一站式文具及打印服務
+            </p>
+            
+            <div class="about-content">
+                <div class="location-info">
+                    <h3>📍 店舖位置</h3>
+                    <p><strong>地址：</strong>九龍太子荔枝角道175號地下</p>
+                    <p><strong>位置：</strong>嘉福中心地下</p>
+                    <p><strong>交通：</strong>太子港鐵站步行可達</p>
+                </div>
+                
+                <div class="location-info">
+                    <h3>⏰ 營業時間</h3>
+                    <p>星期一至五：08:30 - 19:00</p>
+                    <p>星期六：09:00 - 18:00</p>
+                    <p>星期日及公眾假期：休息</p>
+                    <p style="margin-top: 1rem; color: #667eea;"><strong>💡 歡迎致電查詢</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section">
+            <h2>🎯 我們的專業服務</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">
+                除一般文具外，專注提供高效專業的打印及裝訂服務
+            </p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🖨️</div>
+                    <h3>專業打印服務</h3>
+                    <p>黑白及彩色打印</p>
+                    <p>高速大量打印</p>
+                    <p>文件即時處理</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📄</div>
+                    <h3>影印服務</h3>
+                    <p>單面/雙面影印</p>
+                    <p>A3/A4 各種尺寸</p>
+                    <p>快速高效率</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📚</div>
+                    <h3>釘裝服務</h3>
+                    <p>膠圈裝訂</p>
+                    <p>熱熔裝訂</p>
+                    <p>釘書裝訂</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">✏️</div>
+                    <h3>文具用品</h3>
+                    <p>辦公室文具</p>
+                    <p>學生文具</p>
+                    <p>美術用品</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <h2>⭐ 我們的優勢</h2>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h3>非常高效率</h3>
+                    <p>快速處理，即時完成</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🎓</div>
+                    <h3>經驗豐富</h3>
+                    <p>多年專業服務經驗</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">💼</div>
+                    <h3>專業可靠</h3>
+                    <p>服務品質有保證</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">💰</div>
+                    <h3>價格合理</h3>
+                    <p>優惠價格，物超所值</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clients Section -->
+        <section class="clients-section">
+            <h2>🤝 服務對象</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 1rem;">
+                多年來服務各類型機構及個人客戶
+            </p>
+            
+            <div class="clients-list">
+                <div class="client-badge">🏛️ 政府部門</div>
+                <div class="client-badge">🏦 銀行機構</div>
+                <div class="client-badge">🏢 企業公司</div>
+                <div class="client-badge">🏫 中小學校</div>
+                <div class="client-badge">👥 大角咀社區</div>
+                <div class="client-badge">📊 商業機構</div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <h2>💬 客戶見證</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-icon">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        「駿達文具店的打印服務非常快捷，老闆經驗豐富，每次趕急件都能準時完成。價格公道，服務態度好，已經是我們學校的長期合作夥伴！」
+                    </p>
+                    <p class="testimonial-author">— 大角咀某中學教師 👨‍🏫</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-icon">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        「作為附近公司的採購，我們經常需要大量打印和釘裝文件。駿達的效率很高，質量穩定，而且老闆很專業，能給予適當建議。非常推薦！」
+                    </p>
+                    <p class="testimonial-author">— 企業客戶 💼</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-icon">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        「孩子上學需要的文具和打印服務都在這裡解決。老闆熟悉學校的要求，釘裝功課簿又快又好，價錢合理。太子區街坊的好選擇！」
+                    </p>
+                    <p class="testimonial-author">— 家長客戶 👪</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <h2>📮 聯絡我們</h2>
+            
+            <div class="contact-wrapper">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h3>📝 查詢表格</h3>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">姓名 *</label>
+                            <input type="text" id="name" name="name" required placeholder="請輸入您的姓名">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">電話 *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="請輸入聯絡電話">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">電郵</label>
+                            <input type="email" id="email" name="email" placeholder="請輸入電郵地址（選填）">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">查詢內容 *</label>
+                            <textarea id="message" name="message" required placeholder="請描述您的需求或查詢..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">📤 提交查詢</button>
+                    </form>
+                </div>
+                
+                <!-- Google Map -->
+                <div class="map-container">
+                    <h3>🗺️ 店舖位置</h3>
+                    <p style="margin-bottom: 1rem; color: #666;">
+                        <strong>📍 地址：</strong>九龍太子荔枝角道175號地下（嘉福中心地下）
+                    </p>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.8547777777777!2d114.16777777777777!3d22.324444444444444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDE5JzI4LjAiTiAxMTTCsDEwJzA0LjAiRQ!5e0!3m2!1szh-TW!2shk!4v1234567890123!5m2!1szh-TW!2shk"
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                    <p style="margin-top: 1rem; color: #667eea; font-size: 0.9rem;">
+                        🚇 <strong>港鐵：</strong>太子站步行約5分鐘<br>
+                        🚌 <strong>巴士：</strong>多條路線途經荔枝角道
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <h3 style="margin-bottom: 1rem;">📝 駿達文具店</h3>
+        <p>📍 九龍太子荔枝角道175號地下（嘉福中心地下）</p>
+        <p>⏰ 星期一至五 08:30-19:00 | 星期六 09:00-18:00</p>
+        <p style="margin-top: 1rem;">🖨️ 專業打印 | 📄 影印服務 | 📚 釘裝裝訂 | ✏️ 文具用品</p>
+        <p style="margin-top: 1.5rem; opacity: 0.8;">© 2026 駿達文具店 版權所有</p>
+    </footer>
+
+</body>
+</html>
